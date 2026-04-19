@@ -1,5 +1,6 @@
 # 敏感业务数据
-data/
+data/*
+!data/.gitkeep
 
 # Python
 __pycache__/
