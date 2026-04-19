@@ -1,0 +1,17 @@
+# 敏感业务数据
+data/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 环境
+.env
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp

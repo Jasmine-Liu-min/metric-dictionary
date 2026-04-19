@@ -1,0 +1,5 @@
+pandas
+openpyxl
+jieba
+scikit-learn
+gradio
