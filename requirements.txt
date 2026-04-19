@@ -3,3 +3,4 @@ openpyxl
 jieba
 scikit-learn
 gradio
+pyyaml

@@ -1,0 +1,54 @@
+# 数据源配置
+# 新增 Excel 只需在此文件添加一条记录，无需改代码
+#
+# 字段说明：
+#   file:       Excel 文件名（放在 data/ 目录下）
+#   sheet:      Sheet 名称
+#   biz_line:   业务线标签
+#   source_tag: 来源标识（显示在搜索结果中）
+#   columns:    列名映射，将 Excel 中的列名映射到系统字段
+#               系统字段: 指标名称(必填), 指标编码, 类型, 业务口径, 技术口径, SQL, 应用报表
+#               未配置的字段留空即可
+
+sources:
+  - file: Vanso数据方案.xlsx
+    sheet: Vanso指标字典
+    biz_line: Vanso
+    source_tag: Vanso数据方案.xlsx / Vanso指标字典
+    skip_rows: 1          # 跳过前 N 行（原始表头占位行）
+    skip_values:          # 指标名称列中需要跳过的值
+      - 原子指标
+      - 派生指标
+      - 衍生指标
+      - 名词定义
+    columns:
+      指标名称: 指标名
+      指标编码: 指标编码
+      类型: 字典类型
+      业务口径: 业务口径
+      技术口径: 技术口径
+      应用报表: 报表依赖
+
+  - file: 小米项目指标字典.xlsx
+    sheet: 指标（汇总）
+    biz_line: 小米欧洲
+    source_tag: 小米项目指标字典.xlsx / 指标（汇总）
+    columns:
+      指标名称: 指标名称
+      指标编码: 指标编码
+      类型: _literal:指标
+      业务口径: 业务口径
+      技术口径: 技术口径
+      SQL: 开发逻辑\n（填线上版本的逻辑）
+      SQL_fallback: 开发逻辑
+      应用报表: 应用报表
+
+  - file: 小米项目指标字典.xlsx
+    sheet: 概念定义
+    biz_line: 小米欧洲
+    source_tag: 小米项目指标字典.xlsx / 概念定义
+    columns:
+      指标名称: 概念名
+      类型: _literal:概念定义
+      业务口径: 定义
+      技术口径: 技术口径
